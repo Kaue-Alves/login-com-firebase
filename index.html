@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script src="src/firebase.js" defer type="module"></script>
     <title>Login</title>
 </head>
 <body>
-    
+    <section>
+        <form>
+            <h1>Login</h1>
+            <label for="">
+                <p>Usuário</p>
+                <input type="text" id="inputUser">
+            </label>
+            <label for="">
+                <p>Senha</p>
+                <input type="password" id="inputPass">
+            </label>
+            <p><input type="checkbox" id="inputCheck"> Remember me?</p>
+            <button type="submit" id="bttLogin">Login</button>
+            <p id="createOne">Don't have an account? <a href="#">Create one</a></p>
+            <button type="submit" id="bttLoginGoogle">
+                <i class="devicon-google-plain"></i>Login With Google
+            </button>
+        </form>
+    </section>
 </body>
 </html>
