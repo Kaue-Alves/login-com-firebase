@@ -12,9 +12,8 @@ appId: "1:949263278669:web:2729dd103fb249a0b33204"
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth(app)
-const user = auth.currentUser
+
 
 function updateUserProfile(user) {
     const userName = user.displayName
@@ -31,8 +30,6 @@ onAuthStateChanged(auth, user => {
     if(user) {
         updateUserProfile(user)
         // window.location.href = "../logado.html"
-        const uid = user.uid
-        return uid
     } else {
         alert("Create Account & Login")
     }

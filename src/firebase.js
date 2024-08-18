@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyDTVgkFitlKbzyPnMSZHHwHk9fiP1iKvPs",
@@ -20,25 +20,23 @@ bttLogin.addEventListener("click", (e) => {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app)
-auth.languageCode = 'en'
+auth.languageCode = 'pt-BR'
 const provider = new GoogleAuthProvider()
-const user = auth.currentUser
 
 const googleLogin = document.getElementById("bttLoginGoogle")
-googleLogin.addEventListener("click", function(e){
+googleLogin.addEventListener("click", e => {
     e.preventDefault()
 
-    signInWithPopup(auth, provider).then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const user = result.user;
-        console.log(user);
+    signInWithPopup(auth, provider).then(() => {
         window.location.href = "../logado.html"
-        
 
   }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
 
+        console.log(errorCode);
+        console.log(errorMessage);
+        
   });
 
 })
