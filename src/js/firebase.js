@@ -10,12 +10,6 @@ messagingSenderId: "949263278669",
 appId: "1:949263278669:web:2729dd103fb249a0b33204"
 };
 
-const bttLogin = document.getElementById("bttLogin")
-bttLogin.addEventListener("click", (e) => {
-    e.preventDefault()
-    alert("Essa opção não funciona!")
-})
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
